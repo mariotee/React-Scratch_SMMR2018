@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import blockstyle from "./someblock.css"
-import otherblockstyle from "./someotherblock.css"
-import spanstyle from "./somespan.css"
-import otherspanstyle from "./someotherspan.css"
+import blockstyle from "css/someblock.css"
+import otherblockstyle from "css/someotherblock.css"
+import spanstyle from "css/somespan.css"
+import otherspanstyle from "css/someotherspan.css"
 
 class Index extends React.Component
 {
