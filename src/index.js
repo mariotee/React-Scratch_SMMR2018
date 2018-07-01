@@ -7,7 +7,6 @@ import { MuiThemeProvider } from '@material-ui/core'
 import { theme } from "./theme.js"
 
 import routes from "routes"
-
 const history = createBrowserHistory();
 
 ReactDOM.render(

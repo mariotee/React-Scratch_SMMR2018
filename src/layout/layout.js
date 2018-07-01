@@ -28,7 +28,7 @@ function Layout(props)
       <AppBar position="absolute" className={classes.appBar}>
         <Toolbar>
           <Typography variant="title" color="inherit" noWrap>
-            App Layout
+            {"My App"}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -43,14 +43,18 @@ function Layout(props)
         {
           routes.map( ( element, index ) =>
           {
-            const active =  window.location.pathname === element.path;
-            const navLinkClasses = classes.navLink + " " +classnames({[classes.activeColor]: active});
+            const isActive =  window.location.pathname === element.path;
+            const navLinkClasses = classes.navLink + " " + classnames({[classes.activeColor]: isActive});
 
             return(
               <ListItem key={index} className={classes.navItem} button>
                 <NavLink to={element.path} className={navLinkClasses}>
-                  <ListItemIcon className={classes.navIcon}><element.icon/></ListItemIcon>
-                  <ListItemText primary={element.name} className={classes.navText}/>
+                  <ListItemIcon className={classes.navIcon}>
+                    <element.icon/>
+                  </ListItemIcon>
+                  <ListItemText className={classes.navText}
+                    primary={element.name}
+                  />
                 </NavLink>
               </ListItem>
             )
@@ -60,7 +64,7 @@ function Layout(props)
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar}/>
-        <Typography variant="display2">{props.title}</Typography>
+        <Typography className={classes.header} variant="display2">{props.title}</Typography>
         {props.children}
       </main>
     </div>

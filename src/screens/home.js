@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 
-import { Grid, Paper, Divider, Typography, Button } from '@material-ui/core'
+import { Grid, Card, CardContent, Divider, Typography, Button } from '@material-ui/core'
 
 import AppLayout from "layout"
+
+import ColorCard from "components/cards/ColorCard"
 
 export default class Home extends Component
 {
@@ -11,12 +13,11 @@ export default class Home extends Component
     return (
       <AppLayout title="Home">
         <Grid container spacing={24}>
-          <Grid item>
-            <Paper style={{width: 500,height: 500}}>
-              <Typography >{"Some Paper"}</Typography>
-              <Divider/><Divider/><Divider/>
-              <Button variant="contained">{"Click Me"}</Button>
-            </Paper>
+          <Grid item xs={12} md={6}>
+            <ColorCard title="ayy lmao">
+              <Button variant="contained" color="primary">{"Red Pill"}</Button>
+              <Button variant="text" color="secondary">{"Blue Pill"}</Button>
+            </ColorCard>
           </Grid>
         </Grid>
       </AppLayout>

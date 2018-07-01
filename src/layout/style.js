@@ -17,34 +17,48 @@ export default ( theme ) => (
   },
   activeColor:
   {
-    "&,&:hover":
+    color: "#fff",
+    backgroundColor: theme.palette.primary.main,
+    '&:hover':
     {
-      color: "#fff",
-      backgroundColor: "#09f099"
+      color: "#eee",
+      backgroundColor: theme.palette.primary.dark,
     }
   },
   content:
   {
+    padding: `${theme.spacing.unit*3}px`,
     flexGrow: 1,
-    backgroundColor: "#eee",
+    backgroundColor: theme.palette.type === "light" ? "#eee" : "#222",
   },
   toolbar: theme.mixins.toolbar,
-  navItem: { padding: 0 },
+  header:
+  {
+    marginBottom: `${theme.spacing.unit*3}px`
+  },
+  navItem:
+  {
+    padding: 0
+  },
   navLink:
   {
+    color: theme.palette.secondary.main,
     width: "100%",
-    textDecoration: "none"
+    padding: `${theme.spacing.unit*2}px`,
+    textDecoration: "none",
+    '&$activeColor':
+    {
+      color: "#fff"
+    }
   },
   navIcon:
   {
-    padding: "10% 0",
-    color: "inherit",
-    float: "left"
+    float: "left",
+    color: "inherit"
   },
   navText:
   {
-    margin: 0,
-    padding: "10% 0",
-    width: "100%"
+    width: "100%",
+    color: "inherit"
   }
 })
