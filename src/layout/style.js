@@ -2,17 +2,17 @@ export default ( theme ) => (
 {
   root:
   {
-    flexGrow: 1,
     height: "auto",
-    zIndex: 1,
-    overflow: 'hidden',
-    position: 'relative',
-    display: 'flex',
+    overflow: "hidden"
   },
-  appBar: { zIndex: theme.zIndex.drawer + 1 },
+  appBar:
+  {
+    zIndex: theme.zIndex.drawer + 1
+  },
   drawerPaper:
   {
-    position: 'relative',
+    overflow: "hidden",
+    position: "absolute",
     width: theme.dimensions.drawerWidth,
   },
   activeColor:
@@ -27,8 +27,11 @@ export default ( theme ) => (
   },
   content:
   {
-    padding: `${theme.spacing.unit*3}px`,
-    flexGrow: 1,
+    position: "absolute",
+    left: `${theme.dimensions.drawerWidth}px`,
+    padding: `0 ${theme.spacing.unit*4}px`,
+    width: "100%",
+    height: "100%",
     backgroundColor: theme.palette.type === "light" ? "#eee" : "#222",
   },
   toolbar: theme.mixins.toolbar,

@@ -28,7 +28,7 @@ function Layout(props)
       <AppBar position="absolute" className={classes.appBar}>
         <Toolbar>
           <Typography variant="title" color="inherit" noWrap>
-            {"My App"}
+            {"App"}
           </Typography>
         </Toolbar>
       </AppBar>

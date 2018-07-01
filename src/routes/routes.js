@@ -1,22 +1,14 @@
 import React from 'react'
 
-import { Button } from '@material-ui/core'
-import { Checkbox } from '@material-ui/core'
-
 import HomePage from "screens/home.js"
 import OnePage from "screens/one.js"
 import TwoPage from "screens/two.js"
 
 import
-{
-  Dashboard,
-  ContentPaste,
-  LibraryBooks,
-  Tv,
-  Loop
-} from "@material-ui/icons"
+{ Dashboard, AccountCircle, Favorite, Grade, Help }
+from "@material-ui/icons"
 
-const routes =
+export default
 [
   {
     path: "/",
@@ -25,17 +17,27 @@ const routes =
     icon: Dashboard
   },
   {
-    path: "/one",
-    name: "One",
-    component: OnePage,
-    icon: ContentPaste
+    path: "/favorites",
+    name: "Favorites",
+    component: TwoPage,
+    icon: Favorite
   },
   {
-    path: "/two",
-    name: "Two",
+    path: "/stars",
+    name: "Stars",
     component: TwoPage,
-    icon: Tv
+    icon: Grade
+  },
+  {
+    path: "/questions",
+    name: "Questions",
+    component: TwoPage,
+    icon: Help
+  },
+  {
+    path: "/account",
+    name: "Account",
+    component: TwoPage,
+    icon: AccountCircle
   }
-];
-
-export default routes;
+]
