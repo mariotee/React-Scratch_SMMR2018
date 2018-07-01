@@ -9,9 +9,17 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin(
 
 module.exports =
 {
+  devServer:
+  {
+    historyApiFallback: true
+  },
   resolve:
   {
-    modules: [path.resolve(__dirname, 'src'), 'node_modules']
+    modules:
+    [
+      path.resolve(__dirname, 'node_modules'),
+      path.resolve(__dirname, 'src')
+    ]
   },
   module:
   {
