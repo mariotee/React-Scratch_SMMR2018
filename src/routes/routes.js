@@ -29,15 +29,15 @@ export default
     icon: Grade
   },
   {
-    path: "/questions",
-    name: "Questions",
-    component: TwoPage,
-    icon: Help
-  },
-  {
     path: "/account",
     name: "Account",
     component: TwoPage,
     icon: AccountCircle
+  },
+  {
+    path: "/help",
+    name: "Help",
+    component: TwoPage,
+    icon: Help
   }
 ]
