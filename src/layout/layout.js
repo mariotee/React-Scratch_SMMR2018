@@ -25,7 +25,7 @@ function Layout(props)
 
   return (
     <div className={classes.root}>
-      <AppBar position="absolute" className={classes.appBar}>
+      <AppBar className={classes.appBar}>
         <Toolbar>
           <Typography variant="title" color="inherit" noWrap>
             {"App"}
@@ -38,7 +38,7 @@ function Layout(props)
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.toolbar} />
+        <div className={classes.toolbar}/>
         <List component="nav">
         {
           routes.map( ( element, index ) =>
@@ -62,10 +62,12 @@ function Layout(props)
         }
         </List>
       </Drawer>
-      <main className={classes.content}>
+      <main className={classes.body}>
         <div className={classes.toolbar}/>
-        <Typography className={classes.header} variant="display2">{props.title}</Typography>
-        {props.children}
+        <div className={classes.content}>
+          <Typography className={classes.header} variant="display2">{props.title}</Typography>
+          {props.children}
+        </div>
       </main>
     </div>
   )

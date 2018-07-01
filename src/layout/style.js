@@ -2,18 +2,19 @@ export default ( theme ) => (
 {
   root:
   {
-    height: "auto",
     overflow: "hidden"
   },
   appBar:
   {
     zIndex: theme.zIndex.drawer + 1
   },
+  toolbar: theme.mixins.toolbar,
   drawerPaper:
   {
     overflow: "hidden",
     position: "absolute",
-    width: theme.dimensions.drawerWidth,
+    height: "100%",
+    width: theme.dimensions.drawerWidth
   },
   activeColor:
   {
@@ -25,16 +26,19 @@ export default ( theme ) => (
       backgroundColor: theme.palette.primary.dark,
     }
   },
-  content:
+  body:
   {
     position: "absolute",
     left: `${theme.dimensions.drawerWidth}px`,
-    padding: `0 ${theme.spacing.unit*4}px`,
-    width: "100%",
-    height: "100%",
+    padding: `0`,
+    width: `calc(100% - ${theme.dimensions.drawerWidth}px)`,
+    height: `calc(100% - ${theme.spacing.unit}px)`,
     backgroundColor: theme.palette.type === "light" ? "#eee" : "#222",
   },
-  toolbar: theme.mixins.toolbar,
+  content:
+  {
+    padding: `${theme.spacing.unit*2}px ${theme.spacing.unit*4}px`
+  },
   header:
   {
     marginBottom: `${theme.spacing.unit*3}px`
