@@ -10,12 +10,12 @@ import routes from "routes"
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
-    <HashRouter history={history}>
+    <HashRouter>
       <Switch>
       {
         routes.map((element, index) =>
         {
-          return <Route exact key={index} path={element.path} component={element.component}/>
+          return <Route key={index} path={element.path} component={element.component}/>
         })
       }
       </Switch>

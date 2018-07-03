@@ -1,13 +1,7 @@
 export default ( theme ) => (
 {
-  root:
-  {
-    overflow: "hidden"
-  },
-  appBar:
-  {
-    zIndex: theme.zIndex.drawer + 1
-  },
+  root: { overflow: "hidden" },
+  appBar: { zIndex: theme.zIndex.drawer + 1 },
   toolbar: theme.mixins.toolbar,
   drawerPaper:
   {
@@ -15,16 +9,6 @@ export default ( theme ) => (
     position: "absolute",
     height: "100%",
     width: theme.dimensions.drawerWidth
-  },
-  activeColor:
-  {
-    color: "#fff",
-    backgroundColor: theme.palette.primary.main,
-    '&:hover':
-    {
-      color: "#eee",
-      backgroundColor: theme.palette.primary.dark,
-    }
   },
   body:
   {
@@ -42,6 +26,16 @@ export default ( theme ) => (
   header:
   {
     marginBottom: `${theme.spacing.unit*3}px`
+  },
+  navActive:
+  {
+    color: "#fff",
+    backgroundColor: theme.palette.primary.main,
+    '&:hover':
+    {
+      color: "#eee",
+      backgroundColor: theme.palette.primary.dark,
+    }
   },
   navItem:
   {

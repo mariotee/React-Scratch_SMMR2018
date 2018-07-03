@@ -43,7 +43,7 @@ function Layout(props)
         {
           routes.map( ( element, index ) =>
           {
-            const navLinkClasses = classes.navLink + " " + classnames({[classes.activeColor]: window.location.pathname === element.path});
+            const navLinkClasses = classes.navLink + " " + classnames({[classes.navActive]: props.location.pathname === element.path});
 
             return(
               <ListItem key={index} className={classes.navItem} button>
