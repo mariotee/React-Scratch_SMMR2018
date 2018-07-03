@@ -1,27 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
 import { withRouter } from 'react-router'
-import { withStyles } from '@material-ui/core/styles';
-import Button from "@material-ui/core/Button"
-import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-
-import routes from "routes"
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
+import { AppBar, Drawer, Toolbar } from '@material-ui/core/'
+import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core/'
+import { Typography, Button, Divider } from '@material-ui/core/'
+import { withStyles } from '@material-ui/core/styles'
 import style from "./style.js"
+
+import routes from "routes"
+
+Layout.propTypes =
+{
+  classes: PropTypes.object.isRequired,
+}
 
 function Layout(props)
 {
-  const { classes } = console.log(props) || props;
+  const { classes } = props;
 
   return (
     <div className={classes.root}>
@@ -34,9 +32,7 @@ function Layout(props)
       </AppBar>
       <Drawer
         variant="permanent"
-        classes={{
-          paper: classes.drawerPaper,
-        }}
+        classes={{ paper: classes.drawerPaper }}
       >
         <div className={classes.toolbar}/>
         <List component="nav">
@@ -72,9 +68,6 @@ function Layout(props)
   )
 }
 
-Layout.propTypes =
-{
-  classes: PropTypes.object.isRequired,
-}
+const styled = withStyles(style)(Layout);
 
-export default withStyles(style)(withRouter(Layout))
+export default withRouter(styled)

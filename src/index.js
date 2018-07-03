@@ -22,4 +22,4 @@ ReactDOM.render(
     </HashRouter>
   </MuiThemeProvider>,
   document.getElementById("root")
-);
+)

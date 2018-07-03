@@ -5,7 +5,7 @@ import OnePage from "screens/one.js"
 import TwoPage from "screens/two.js"
 
 import
-{ Dashboard, AccountCircle, Favorite, Grade, Help }
+{ Home, AccountCircle, Help }
 from "@material-ui/icons"
 
 export default
@@ -14,11 +14,11 @@ export default
     path: "/",
     name: "Home",
     component: HomePage,
-    icon: Dashboard
+    icon: Home
   },
   {
     path: "/account",
-    name: "Favorites",
+    name: "Account",
     component: OnePage,
     icon: AccountCircle
   },
