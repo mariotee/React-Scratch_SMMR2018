@@ -6,13 +6,13 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --port 3150 --open --hot",
     "build": "webpack --mode production",
-    "predeploy": "cd .",
-    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mario Torres",
   "license": "ISC",
-  "homepage":"http://mariotee.github.io/https://mariotee.github.io/React-Scratch_SMMR2018/",
+  "homepage":"https://mariotee.github.io/React-Scratch_SMMR2018/",
   "devDependencies": {
     "@material-ui/core": "^1.3.0",
     "@material-ui/icons": "^1.1.0",

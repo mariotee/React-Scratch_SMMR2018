@@ -1,17 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 
 import { MuiThemeProvider } from '@material-ui/core'
 import { theme } from "./theme.js"
 
 import routes from "routes"
-const history = createBrowserHistory();
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
-    <Router history={history}>
+    <HashRouter history={history}>
       <Switch>
       {
         routes.map((element, index) =>
@@ -20,7 +19,7 @@ ReactDOM.render(
         })
       }
       </Switch>
-    </Router>
+    </HashRouter>
   </MuiThemeProvider>,
   document.getElementById("root")
 );
