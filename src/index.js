@@ -15,7 +15,7 @@ ReactDOM.render(
       {
         routes.map((element, index) =>
         {
-          return <Route key={index} path={element.path} component={element.component}/>
+          return <Route exact key={index} path={element.path} component={element.component}/>
         })
       }
       </Switch>

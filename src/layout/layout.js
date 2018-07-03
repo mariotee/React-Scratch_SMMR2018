@@ -21,7 +21,7 @@ import style from "./style.js"
 
 function Layout(props)
 {
-  const { classes } = props;
+  const { classes } = console.log(props) || props;
 
   return (
     <div className={classes.root}>

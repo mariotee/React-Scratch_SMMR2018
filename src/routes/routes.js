@@ -17,21 +17,9 @@ export default
     icon: Dashboard
   },
   {
-    path: "/favorites",
-    name: "Favorites",
-    component: TwoPage,
-    icon: Favorite
-  },
-  {
-    path: "/stars",
-    name: "Stars",
-    component: TwoPage,
-    icon: Grade
-  },
-  {
     path: "/account",
-    name: "Account",
-    component: TwoPage,
+    name: "Favorites",
+    component: OnePage,
     icon: AccountCircle
   },
   {
