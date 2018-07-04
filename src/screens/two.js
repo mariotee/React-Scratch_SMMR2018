@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
-import { Grid, Paper, Typography, Button } from '@material-ui/core'
+import { Grid, Typography, Button } from '@material-ui/core'
 
 import AppLayout from "layout"
+import ColorCard from "components/cards/ColorCard"
 
 export default class Two extends Component
 {
@@ -11,11 +12,10 @@ export default class Two extends Component
     return (
       <AppLayout title="Two">
         <Grid container spacing={24}>
-          <Grid item>
-            <Paper style={{width: 500,height: 500}}>
-              <Typography >{"Making a #2"}</Typography>
-              <Typography >{"Might take a while"}</Typography>
-            </Paper>
+          <Grid item xs={12} md={6}>
+            <ColorCard title="making a #2">
+              <Typography>{"this could take a while..."}</Typography>
+            </ColorCard>
           </Grid>
         </Grid>
       </AppLayout>
