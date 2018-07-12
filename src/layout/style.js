@@ -6,60 +6,63 @@ export default ( theme ) => (
   drawerPaper:
   {
     overflow: "hidden",
-    position: "absolute",
-    height: "100%",
-    width: theme.dimensions.drawerWidth
+    position: "visible",
+    width: theme.dimensions.drawer.width
   },
   body:
   {
-    position: "absolute",
-    left: `${theme.dimensions.drawerWidth}px`,
-    padding: `0`,
-    width: `calc(100% - ${theme.dimensions.drawerWidth}px)`,
-    height: `calc(100% - ${theme.spacing.unit}px)`,
+    position: "relative",
+    padding: `0 0 0 ${theme.dimensions.drawer.width}px`,
     backgroundColor: theme.palette.type === "light" ? "#eee" : "#222",
   },
   content:
   {
-    padding: `${theme.spacing.unit*2}px ${theme.spacing.unit*4}px`
+    margin: `${theme.spacing.unit*3}px`
   },
   header:
   {
-    marginBottom: `${theme.spacing.unit*3}px`
+    margin: `${theme.spacing.unit}px`
   },
   navActive:
   {
     color: "#fff",
     backgroundColor: theme.palette.primary.main,
-    '&:hover':
-    {
-      color: "#eee",
-      backgroundColor: theme.palette.primary.dark,
-    }
   },
   navItem:
   {
-    padding: 0
+    padding: 0,
   },
   navLink:
   {
-    color: theme.palette.secondary.main,
+    backgroundColor: '#fff',
+    color: 'inherit',
     width: "100%",
-    padding: `${theme.spacing.unit*2}px`,
+    padding: `${theme.spacing.unit}px`,
     textDecoration: "none",
-    '&$activeColor':
+    '&$navActive':
     {
       color: "#fff"
+    },
+    '&:hover':
+    {
+      backgroundColor: '#eee',
     }
   },
   navIcon:
   {
     float: "left",
+    padding: `${theme.spacing.unit*1.5}px ${theme.spacing.unit}px`,
     color: "inherit"
   },
   navText:
   {
-    width: "100%",
-    color: "inherit"
+    borderRadius: '8px',
+    whiteSpace: 'nowrap',
+    padding: `${theme.spacing.unit*2}px ${theme.spacing.unit}px`,
+    textAlign: 'left',
+    '&$navActive':
+    {
+      color: "#fff"
+    }
   }
 })
