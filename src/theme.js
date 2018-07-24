@@ -1,9 +1,6 @@
 import { createMuiTheme } from '@material-ui/core';
 
 export const theme = createMuiTheme({
-  typography: {
-    fontFamily: 'Product Sans, sans-serif',
-  },
   dimensions: {
     sidebar: 192,
   },

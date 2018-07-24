@@ -12,9 +12,10 @@ import style from './style.js';
 import routes from 'routes';
 
 Layout.propTypes = {
-  appTitle: PropTypes.string,
-  title: PropTypes.string,
   classes: PropTypes.object.isRequired,
+  location: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string,
 };
 
 function Layout({ ...props }) {
@@ -24,8 +25,8 @@ function Layout({ ...props }) {
     <div className={classes.root}>
       <AppBar className={classes.appBar}>
         <Toolbar>
-          <Typography variant="title" color="inherit" noWrap>
-            {props.appTitle}
+          <Typography variant="title" noWrap>
+            {'React Scratch'}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -51,6 +52,7 @@ function Layout({ ...props }) {
                       <element.icon/>
                     </ListItemIcon>
                     <ListItemText
+                      disableTypography
                       className={classnames({
                         [classes.navText]: true,
                         [classes.navActive]: props.location.pathname === element.path,

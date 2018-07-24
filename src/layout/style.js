@@ -23,34 +23,34 @@ export default (theme) => ({
     paddingBottom: `${theme.spacing.unit * 2}px`,
   },
   navActive: {
-    color: '#fff',
     backgroundColor: theme.palette.primary.main,
+    color: '#fff',
   },
   navItem: {
+    margin: 0,
     padding: 0,
   },
   navLink: {
-    //padding: `${theme.spacing.unit*2}px ${theme.spacing.unit}px`,
-    backgroundColor: 'inherit',
     width: '100%',
     textDecoration: 'none',
+    backgroundColor: 'inherit',
+    color: theme.palette.type === 'light'
+    ? '#333'
+    : '#ccc',
+    '&$navActive': {
+      color: '#fff',
+    },
   },
   navIcon: {
     float: 'left',
     padding: `${theme.spacing.unit * 2}px`,
-    color: theme.palette.type === 'light'
-      ? `${theme.palette.primary.dark + '99'}`
-      : `${theme.palette.primary.light + '99'}`,
-    '&$navActive': {
-      color: '#fff',
-    },
+    color: 'inherit',
+    opacity: 0.8,
   },
   navText: {
     padding: `${theme.spacing.unit * 2}px`,
     whiteSpace: 'nowrap',
     textAlign: 'left',
-    '&$navActive': {
-      color: '#fff',
-    },
+    color: 'inherit',
   },
 });
