@@ -1,31 +1,27 @@
-import React from 'react'
+import HomePage from 'views/home.js';
+import OnePage from 'views/one.js';
+import TwoPage from 'views/two.js';
 
-import HomePage from "screens/home.js"
-import OnePage from "screens/one.js"
-import TwoPage from "screens/two.js"
-
-import
-{ Home, AccountCircle, Help }
-from "@material-ui/icons"
+import { Home, AccountCircle, Help } from '@material-ui/icons';
 
 export default
 [
   {
-    path: "/",
-    name: "Home",
+    path: '/',
+    name: 'Home',
     component: HomePage,
-    icon: Home
+    icon: Home,
   },
   {
-    path: "/account",
-    name: "Account",
+    path: '/account',
+    name: 'Account',
     component: OnePage,
-    icon: AccountCircle
+    icon: AccountCircle,
   },
   {
-    path: "/help",
-    name: "Help",
+    path: '/help',
+    name: 'Help',
     component: TwoPage,
-    icon: Help
-  }
-]
+    icon: Help,
+  },
+];
