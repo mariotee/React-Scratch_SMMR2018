@@ -1,9 +1,7 @@
 import { createMuiTheme } from '@material-ui/core';
 
 export const theme = createMuiTheme({
-  dimensions: {
-    sidebar: 192,
-  },
+  dimensions: { sidebar: 192 },
   palette: {
     type: 'dark',
     primary: {

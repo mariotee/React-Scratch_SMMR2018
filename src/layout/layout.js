@@ -26,7 +26,7 @@ function Layout({ ...props }) {
       <AppBar className={classes.appBar}>
         <Toolbar>
           <Typography variant="title" noWrap>
-            {'React Scratch'}
+            {'React Scratch w/ Material UI'}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -38,7 +38,7 @@ function Layout({ ...props }) {
           <div className={classes.toolbar}/>
           <List component="nav">
           {
-            routes.map( ( element, index ) => {
+            routes.map((element, index) => {
               return (
                 <ListItem key={index} className={classes.navItem} button>
                   <NavLink

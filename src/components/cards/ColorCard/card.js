@@ -22,7 +22,9 @@ function ColorCard({ ...props }) {
         <Typography variant="headline">{props.title}</Typography>
       </CardContent>
       <Divider/>
-      <CardContent style={{ height: props.height, width: props.height }}>
+      <CardContent style={{
+height: props.height, width: props.height,
+}}>
         {props.children}
       </CardContent>
     </Card>

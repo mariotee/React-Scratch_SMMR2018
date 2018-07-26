@@ -5,23 +5,15 @@ export default (theme) => ({
       ? '#eee'
       : '#222',
   },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
+  appBar: { zIndex: theme.zIndex.drawer + 1 },
   toolbar: theme.mixins.toolbar,
   sidebarPaper: {
     width: theme.dimensions.sidebar,
     overflow: 'hidden',
   },
-  body: {
-    padding: `0 0 0 ${theme.dimensions.sidebar}px`,
-  },
-  content: {
-    padding: `${theme.spacing.unit * 3}px`,
-  },
-  header: {
-    paddingBottom: `${theme.spacing.unit * 2}px`,
-  },
+  body: { padding: `0 0 0 ${theme.dimensions.sidebar}px` },
+  content: { padding: `${theme.spacing.unit * 3}px` },
+  header: { paddingBottom: `${theme.spacing.unit * 2}px` },
   navActive: {
     backgroundColor: theme.palette.primary.main,
     color: '#fff',
@@ -37,9 +29,7 @@ export default (theme) => ({
     color: theme.palette.type === 'light'
     ? '#333'
     : '#ccc',
-    '&$navActive': {
-      color: '#fff',
-    },
+    '&$navActive': { color: '#fff' },
   },
   navIcon: {
     float: 'left',

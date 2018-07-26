@@ -11,13 +11,13 @@ export default
     name: 'Home',
     component: HomePage,
     icon: Home,
-  },
+  }, 
   {
     path: '/account',
     name: 'Account',
     component: OnePage,
     icon: AccountCircle,
-  },
+  }, 
   {
     path: '/help',
     name: 'Help',
