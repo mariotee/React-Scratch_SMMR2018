@@ -10,10 +10,22 @@ export default (theme) => ({
   },
   toolbar: theme.mixins.toolbar,
   sidebarPaper: {
-    width: theme.dimensions.sidebar,
+    [theme.breakpoints.up('sm')]: {
+      width: theme.dimensions.sidebarMobile,
+    },
+    [theme.breakpoints.up('md')]: {
+      width: theme.dimensions.sidebarNormal,
+    },
     overflow: 'hidden',
   },
-  body: { padding: `0 0 0 ${theme.dimensions.sidebar}px` },
+  body: { 
+    [theme.breakpoints.up('sm')]: {
+      padding: `0 0 0 ${theme.dimensions.sidebarMobile}px`,
+    },
+    [theme.breakpoints.up('md')]: {
+      padding: `0 0 0 ${theme.dimensions.sidebarNormal}px`,
+    },
+  },
   content: { padding: `${theme.spacing.unit * 3}px` },
   header: { paddingBottom: `${theme.spacing.unit * 2}px` },
   navActive: {

@@ -1,7 +1,10 @@
 import { createMuiTheme } from '@material-ui/core';
 
 export const theme = createMuiTheme({
-  dimensions: { sidebar: 192 },
+  dimensions: { 
+    sidebarNormal: 192,
+    sidebarMobile: 136,
+  },
   palette: {
     primary: {
       main: '#3090fc',
