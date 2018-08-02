@@ -10,7 +10,7 @@ export default (theme) => ({
   },
   toolbar: theme.mixins.toolbar,
   sidebarPaper: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.down('sm')]: {
       width: theme.dimensions.sidebarMobile,
     },
     [theme.breakpoints.up('md')]: {
@@ -19,7 +19,7 @@ export default (theme) => ({
     overflow: 'hidden',
   },
   body: { 
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.down('sm')]: {
       padding: `0 0 0 ${theme.dimensions.sidebarMobile}px`,
     },
     [theme.breakpoints.up('md')]: {
