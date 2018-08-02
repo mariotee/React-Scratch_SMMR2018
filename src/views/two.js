@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Grid, Typography } from '@material-ui/core';
 
 import AppLayout from 'layout';
-import ColorCard from 'components/cards/ColorCard';
+import ColorCard from 'components/ColorCard';
 
 export default class Two extends Component {
   render() {

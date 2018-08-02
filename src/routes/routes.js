@@ -2,7 +2,7 @@ import HomePage from 'views/home.js';
 import OnePage from 'views/one.js';
 import TwoPage from 'views/two.js';
 
-import { Home, AccountCircle, Help } from '@material-ui/icons';
+import { Home, TagFaces, LooksTwo, PlusOne } from '@material-ui/icons';
 
 export default
 [
@@ -13,15 +13,15 @@ export default
     icon: Home,
   }, 
   {
-    path: '/account',
-    name: 'Account',
+    path: '/one',
+    name: 'One',
     component: OnePage,
-    icon: AccountCircle,
+    icon: PlusOne,
   }, 
   {
-    path: '/help',
-    name: 'Help',
+    path: '/two',
+    name: 'Two',
     component: TwoPage,
-    icon: Help,
+    icon: LooksTwo,
   },
 ];

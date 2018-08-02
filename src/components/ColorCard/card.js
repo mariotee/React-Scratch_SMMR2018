@@ -6,11 +6,11 @@ import { withStyles } from '@material-ui/core';
 import style from './style.js';
 
 ColorCard.propTypes = {
+  classes: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
   title: PropTypes.string,
   titleColor: PropTypes.string,
   body: PropTypes.string,
-  height: PropTypes.string,
-  width: PropTypes.string,
 };
 
 function ColorCard({ ...props }) {
@@ -18,13 +18,11 @@ function ColorCard({ ...props }) {
 
   return (
     <Card>
-      <CardContent className={classes.cardTitle} style={{ backgroundColor: props.titleColor }}>
-        <Typography variant="headline">{props.title}</Typography>
+      <CardContent className={classes.cardTitle}>
+        <Typography variant="headline" color="inherit">{props.title}</Typography>
       </CardContent>
       <Divider/>
-      <CardContent style={{
-height: props.height, width: props.height,
-}}>
+      <CardContent>
         {props.children}
       </CardContent>
     </Card>

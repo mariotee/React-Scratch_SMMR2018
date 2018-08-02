@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Grid, Typography } from '@material-ui/core';
 
 import AppLayout from 'layout';
-import ColorCard from 'components/cards/ColorCard';
+import ColorCard from 'components/ColorCard';
 
 export default class One extends Component {
   render() {
@@ -11,8 +11,8 @@ export default class One extends Component {
       <AppLayout title="One">
         <Grid container spacing={24}>
           <Grid item xs={12} md={6}>
-            <ColorCard title="page one">
-              <Typography>{'Hello'}</Typography>
+            <ColorCard title="Page One">
+              <Typography>{'Hello World!'}</Typography>
             </ColorCard>
           </Grid>
         </Grid>

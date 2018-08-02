@@ -12,7 +12,7 @@ module.exports = {
     'eqeqeq': ['error', 'always'],
     'curly': ['error', 'all'],
     'brace-style': ['error', '1tbs', { 
-      allowSingleLine: true 
+      allowSingleLine: true,
     }],
     'no-multi-spaces': 'error',
     'quotes': ['error', 'single', { 
@@ -50,10 +50,11 @@ module.exports = {
       minItems: 5,
     }],
     'object-curly-spacing': ['warn','always'],
-    'object-curly-newline': ['error', { 
+    'object-curly-newline': ['error', {
       ObjectExpression: {
         multiline: true,
         minProperties: 2,
+        consistent: true,
       },
       ObjectPattern: {
         minProperties: 5,

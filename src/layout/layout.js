@@ -13,7 +13,7 @@ import routes from 'routes';
 
 Layout.propTypes = {
   classes: PropTypes.object.isRequired,
-  location: PropTypes.string.isRequired,
+  location: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
   title: PropTypes.string,
 };
@@ -25,7 +25,7 @@ function Layout({ ...props }) {
     <div className={classes.root}>
       <AppBar className={classes.appBar}>
         <Toolbar>
-          <Typography variant="title" noWrap>
+          <Typography color="inherit" variant="title" noWrap>
             {'React Scratch w/ Material UI'}
           </Typography>
         </Toolbar>
@@ -68,7 +68,13 @@ function Layout({ ...props }) {
         </Drawer>
         <div className={classes.toolbar}/>
         <div className={classes.content}>
-          <Typography className={classes.header} variant="display1">{props.title}</Typography>
+          <Typography 
+            className={classes.header} 
+            color="primary" 
+            variant="display1"
+          >
+            {props.title}
+          </Typography>
           {props.children}
         </div>
       </main>

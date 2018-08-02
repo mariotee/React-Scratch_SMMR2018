@@ -1,11 +1,13 @@
 export default (theme) => ({
   root: {
-    height: '100vh',
+    height: '100%',
     backgroundColor: theme.palette.type === 'light'
-      ? '#eee'
-      : '#222',
+      ? '#eeeeee'
+      : '#222222',
   },
-  appBar: { zIndex: theme.zIndex.drawer + 1 },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+  },
   toolbar: theme.mixins.toolbar,
   sidebarPaper: {
     width: theme.dimensions.sidebar,
