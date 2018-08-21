@@ -26,7 +26,7 @@ class QuoteContainer extends React.Component {
       maxWidth: '800px',
       margin: 'auto',
     }}>
-      <h3>{this.state.date}</h3>
+      <h3>{this.state.date ? (new Date(this.state.date)).toDateString() : ''}</h3>
       <p>{this.state.quote}</p>
       <i>- {this.state.author}</i>
     </div>;
