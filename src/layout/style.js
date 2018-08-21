@@ -18,7 +18,7 @@ export default (theme) => ({
     },
     overflow: 'hidden',
   },
-  body: { 
+  body: {
     [theme.breakpoints.down('sm')]: {
       padding: `0 0 0 ${theme.dimensions.sidebarMobile}px`,
     },
@@ -47,7 +47,7 @@ export default (theme) => ({
   },
   navIcon: {
     float: 'left',
-    padding: `${theme.spacing.unit * 2}px`,
+    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit}px`,
     color: 'inherit',
     opacity: 0.8,
   },

@@ -1,8 +1,9 @@
 import HomePage from 'views/home.js';
 import OnePage from 'views/one.js';
 import TwoPage from 'views/two.js';
+import Qod from 'views/qod.js';
 
-import { Home, TagFaces, LooksTwo, PlusOne } from '@material-ui/icons';
+import { Home, LooksTwo, PlusOne, DateRange } from '@material-ui/icons';
 
 export default
 [
@@ -23,5 +24,11 @@ export default
     name: 'Two',
     component: TwoPage,
     icon: LooksTwo,
+  },
+  {
+    path: '/qod',
+    name: 'Quotes',
+    component: Qod,
+    icon: DateRange,
   },
 ];
