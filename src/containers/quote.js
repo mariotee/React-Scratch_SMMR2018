@@ -1,5 +1,17 @@
 import React from 'react';
 
+/*
+ * Categories:
+ * inspire
+ * management
+ * sports
+ * life
+ * funny
+ * love
+ * art
+ * students
+ */
+
 class QuoteContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -8,9 +20,9 @@ class QuoteContainer extends React.Component {
       loaded: false,
     };
   }
-  
+
   async componentDidMount() {
-    let response = await fetch('https://quotes.rest/qod');
+    let response = await fetch('https://quotes.rest/qod/?category=art');
     let json = await response.json();
     this.setState({
       loaded: true,
