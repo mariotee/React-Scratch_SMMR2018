@@ -5,7 +5,7 @@ class QuoteContainer extends React.Component {
     super(props);
 
     this.state = {
-      quote: '',
+      loaded: false,
     };
   }
   
@@ -13,22 +13,28 @@ class QuoteContainer extends React.Component {
     let response = await fetch('https://quotes.rest/qod');
     let json = await response.json();
     this.setState({
+      loaded: true,
       quote: json.contents.quotes[0].quote,
       author: json.contents.quotes[0].author,
       date: json.contents.quotes[0].date,
     });
   }
 
-  render(){
-
+  render() {
     return <div style={{
       width: '80%',
       maxWidth: '800px',
       margin: 'auto',
     }}>
-      <h3>{this.state.date ? (new Date(this.state.date)).toDateString() : ''}</h3>
-      <p>{this.state.quote}</p>
-      <i>- {this.state.author}</i>
+    {
+      ! this.state.loaded
+      ? 'Loading...'
+      : <div>
+        <h3>{this.state.date}</h3>
+        <p>{this.state.quote}</p>
+        <i>- {this.state.author}</i>
+      </div>
+    }
     </div>;
   }
 }
