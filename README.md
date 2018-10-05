@@ -22,4 +22,5 @@ retreive from npm using ```npm i @material-ui/core @material-ui/icons```
     "webpack": "^4.12.2",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
+}
 ```
