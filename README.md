@@ -1,4 +1,4 @@
-# React-Scratch_SMMR2018
+# React-Scratch
 Learning to make a react app from scratch (Babel, Webpack)
 UI Elements from Material-UI
 retreive from npm using ```npm i @material-ui/core @material-ui/icons```
