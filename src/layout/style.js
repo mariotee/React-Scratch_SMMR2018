@@ -9,52 +9,44 @@ export default (theme) => ({
     zIndex: theme.zIndex.drawer + 1,
   },
   toolbar: theme.mixins.toolbar,
-  sidebarPaper: {
-    [theme.breakpoints.down('sm')]: {
-      width: theme.dimensions.sidebarMobile,
-    },
-    [theme.breakpoints.up('md')]: {
-      width: theme.dimensions.sidebarNormal,
-    },
-    overflow: 'hidden',
+  listRoot: {
+    display: 'flex',
+    overflowX: 'auto',
   },
-  body: {
-    [theme.breakpoints.down('sm')]: {
-      padding: `0 0 0 ${theme.dimensions.sidebarMobile}px`,
-    },
-    [theme.breakpoints.up('md')]: {
-      padding: `0 0 0 ${theme.dimensions.sidebarNormal}px`,
-    },
+  content: {
+    padding: `${theme.spacing.unit * 2}px`,
   },
-  content: { padding: `${theme.spacing.unit * 3}px` },
-  header: { paddingBottom: `${theme.spacing.unit * 2}px` },
+  header: {
+    paddingBottom: `${theme.spacing.unit * 2}px`,
+  },
   navActive: {
     backgroundColor: theme.palette.primary.main,
     color: '#fff',
   },
-  navItem: {
-    margin: 0,
+  navItem: {    
     padding: 0,
+    '&$navActive': {
+      backgroundColor: theme.palette.primary.main,
+    },
   },
   navLink: {
     width: '100%',
-    textDecoration: 'none',
-    backgroundColor: 'inherit',
-    color: theme.palette.type === 'light'
-    ? '#333'
-    : '#ccc',
-    '&$navActive': { color: '#fff' },
+    margin: 0,
+    padding: 0,
+    textDecoration: 'none',    
+    color: 'inherit',    
+    textAlign: 'center',
   },
-  navIcon: {
-    float: 'left',
-    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit}px`,
+  navIcon: {    
+    display: 'block',
+    margin: '0 auto',
+    padding: 0,
     color: 'inherit',
     opacity: 0.8,
   },
   navText: {
-    padding: `${theme.spacing.unit * 2}px`,
-    whiteSpace: 'nowrap',
-    textAlign: 'left',
-    color: 'inherit',
+    margin: '0 auto',
+    display: 'block',
+    color: 'inherit',    
   },
 });

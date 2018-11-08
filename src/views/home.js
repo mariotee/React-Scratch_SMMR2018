@@ -11,6 +11,8 @@ export default class Home extends Component {
     return (
       <AppLayout title="Home">
         <Grid container spacing={24}>
+          <Grid item md={3}>
+          </Grid>
           <Grid item xs={12} md={6}>
             <ColorCard title="This is an edited card from Material UI">
               <Typography variant="body2">
@@ -19,6 +21,8 @@ export default class Home extends Component {
                 works under the hood.  There is limited functionality because it is just a layout`}
               </Typography>
             </ColorCard>
+          </Grid>
+          <Grid item md={3}>
           </Grid>
         </Grid>
       </AppLayout>

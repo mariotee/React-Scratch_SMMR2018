@@ -10,10 +10,14 @@ export default class Two extends Component {
     return (
       <AppLayout title="Two">
         <Grid container spacing={24}>
-          <Grid item xs={12} md={6}>
+          <Grid item md={2}>
+          </Grid>
+          <Grid item xs={12} md={8}>
             <ColorCard title="making a #2">
               <Typography>{'this could take a while...'}</Typography>
             </ColorCard>
+          </Grid>
+          <Grid item md={2}>
           </Grid>
         </Grid>
       </AppLayout>
