@@ -24,33 +24,41 @@ class QuoteContainer extends React.Component {
   }
 
   async componentDidMount() {
-    //let inspire = await this.getData("inspire")
-    //let management = await this.getData("management")
-    //let sports = await this.getData("sports")
+    let inspire = await this.getData("inspire")
+      .catch((err) => console.log("inspire err",err))
+    let management = await this.getData("management")
+      .catch((err) => console.log("management err",err))
+    let sports = await this.getData("sports")
+      .catch((err) => console.log("sports err",err))
     let life = await this.getData("life")
+      .catch((err) => console.log("life err",err))
     let funny = await this.getData("funny")
-    //let love = await this.getData("love")
+      .catch((err) => console.log("funny err",err))
+    let love = await this.getData("love")
+      .catch((err) => console.log("love err",err))
     let art = await this.getData("art")
-    //let students = await this.getData("students")
+      .catch((err) => console.log("art err",err))
+    let students = await this.getData("students")
     this.setState({
       loaded: true,
       data: [
-        //inspire,
-        //management,
-        //sports,
+        inspire,
+        management,
+        sports,
         life,
         funny,
-        //love,
+        love,
         art,
-        //students,
+        students,
       ]
     })
   }
 
   async getData(key) {
-    let response = await fetch(`https://quotes.rest/qod/?category=${key}`);
-    let json = await response.json();
+    let response = await fetch(`https://quotes.rest/qod/?category=${key}`);    
+    let json = await response.json();    
     let data = {
+      category: key,
       quote: json.contents.quotes[0].quote,
       author: json.contents.quotes[0].author,
       date: json.contents.quotes[0].date,
@@ -70,8 +78,8 @@ class QuoteContainer extends React.Component {
         !(this.state.loaded)
           ? 'Loading...'
           : this.state.data.map((element,index) => {
-            return <div key={index}>
-              <h3>{element.date}</h3>
+            return element && <div key={index}>
+              <h3>{element.category} quote</h3>
               <p>{element.quote}</p>
               <i> - {element.author}</i>
             </div>
