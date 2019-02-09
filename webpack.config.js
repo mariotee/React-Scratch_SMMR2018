@@ -1,20 +1,21 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const HtmlWebPackPlugin = require("html-webpack-plugin")
+const path = require("path")
 
 const htmlWebpackPlugin = new HtmlWebPackPlugin(
 {
-  template: './src/index.html',
-  filename: './index.html'
-});
+  template: "./src/index.html",
+  filename: "./index.html",
+})
 
 module.exports =
 {
-  entry: ['babel-polyfill','./src/index.js'],
+  entry: ["babel-polyfill","./src/index.js"],
   devServer: {
     historyApiFallback: true,
+    overlay: true,
   },
   resolve: {
-    modules: [path.resolve(__dirname, 'node_modules'),path.resolve(__dirname, 'src')],
+    modules: [path.resolve(__dirname, "node_modules"),path.resolve(__dirname, "src")],
   },
   module: {
     rules: [
@@ -22,23 +23,23 @@ module.exports =
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader', 
+          loader: "babel-loader", 
           options: { 
-            plugins: ['transform-object-rest-spread'],
+            plugins: ["transform-object-rest-spread"],
           },
         },
       },
       {
         test: /\.css$/,
         use: [
-          { loader: 'style-loader' },
+          { loader: "style-loader" },
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options:
             {
               modules: true,
               importLoaders: 1,
-              localIdentName: '[name]_[local]_[hash:base64]',
+              localIdentName: "[name]_[local]_[hash:base64]",
               sourceMap: true,
               minimize: true,
             },
@@ -48,4 +49,4 @@ module.exports =
     ],
   },
   plugins: [htmlWebpackPlugin],
-};
+}

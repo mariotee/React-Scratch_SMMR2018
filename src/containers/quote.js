@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 /*
  * Categories:
@@ -12,7 +12,7 @@ import React from 'react'
  * students
  */
 
-import Header from 'components/Header.js'
+import Header from "components/Header.js"
 
 class QuoteContainer extends React.Component {
   constructor(props) {
@@ -50,13 +50,13 @@ class QuoteContainer extends React.Component {
         love,
         art,
         students,
-      ]
+      ],
     })
   }
 
   async getData(key) {
-    let response = await fetch(`https://quotes.rest/qod/?category=${key}`);    
-    let json = await response.json();    
+    let response = await fetch(`https://quotes.rest/qod/?category=${key}`)    
+    let json = await response.json()    
     let data = {
       category: key,
       quote: json.contents.quotes[0].quote,
@@ -69,14 +69,14 @@ class QuoteContainer extends React.Component {
 
   render() {
     return <div style={{
-      width: '80%',
-      maxWidth: '800px',
-      margin: 'auto',
+      width: "80%",
+      maxWidth: "800px",
+      margin: "auto",
     }}>
       <Header/>
       {
         !(this.state.loaded)
-          ? 'Loading...'
+          ? "Loading..."
           : this.state.data.map((element,index) => {
             return element && <div key={index}>
               <h3>{element.category} quote</h3>
@@ -85,7 +85,7 @@ class QuoteContainer extends React.Component {
             </div>
           })
       }
-    </div>;
+    </div>
   }
 }
 
