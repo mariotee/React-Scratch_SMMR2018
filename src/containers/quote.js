@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 /*
  * Categories:
@@ -12,24 +12,51 @@ import React from 'react';
  * students
  */
 
+import Header from 'components/Header.js'
+
 class QuoteContainer extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       loaded: false,
-    };
+    }
   }
 
   async componentDidMount() {
-    let response = await fetch('https://quotes.rest/qod/?category=art');
-    let json = await response.json();
+    let inspire = await this.getData("inspire")
+    let management = await this.getData("management")
+    let sports = await this.getData("sports")
+    let life = await this.getData("life")
+    let funny = await this.getData("funny")
+    let love = await this.getData("love")
+    let art = await this.getData("art")
+    let students = await this.getData("students")
     this.setState({
       loaded: true,
+      data: [
+        //inspire,
+        //management,
+        //sports,
+        life,
+        funny,
+        //love,
+        art,
+        //students,
+      ]
+    })
+  }
+
+  async getData(key) {
+    let response = await fetch(`https://quotes.rest/qod/?category=${key}`);
+    let json = await response.json();
+    let data = {
       quote: json.contents.quotes[0].quote,
       author: json.contents.quotes[0].author,
       date: json.contents.quotes[0].date,
-    });
+    }
+
+    return data
   }
 
   render() {
@@ -38,17 +65,20 @@ class QuoteContainer extends React.Component {
       maxWidth: '800px',
       margin: 'auto',
     }}>
-    {
-      ! this.state.loaded
-      ? 'Loading...'
-      : <div>
-        <h3>{this.state.date}</h3>
-        <p>{this.state.quote}</p>
-        <i>- {this.state.author}</i>
-      </div>
-    }
+      <Header/>
+      {
+        !(this.state.loaded)
+          ? 'Loading...'
+          : this.state.data.map((element,index) => {
+            return <div key={index}>
+              <h3>{element.date}</h3>
+              <p>{element.quote}</p>
+              <i> - {element.author}</i>
+            </div>
+          })
+      }
     </div>;
   }
 }
 
-export default QuoteContainer;
+export default QuoteContainer

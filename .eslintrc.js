@@ -15,11 +15,11 @@ module.exports = {
       allowSingleLine: true,
     }],
     'no-multi-spaces': 'error',
-    'quotes': ['error', 'single', { 
+    'quotes': ['warning', 'double', { 
       avoidEscape: true, 
       allowTemplateLiterals: true 
     }],
-    'semi': ['warn','always'],
+    'semi': ['warn','never'],
     'space-before-function-paren': ['warn','never'],
     'space-in-parens': ['warn','never'],
     'space-infix-ops': 'warn',
