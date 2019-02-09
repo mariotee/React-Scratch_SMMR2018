@@ -24,14 +24,14 @@ class QuoteContainer extends React.Component {
   }
 
   async componentDidMount() {
-    let inspire = await this.getData("inspire")
-    let management = await this.getData("management")
-    let sports = await this.getData("sports")
+    //let inspire = await this.getData("inspire")
+    //let management = await this.getData("management")
+    //let sports = await this.getData("sports")
     let life = await this.getData("life")
     let funny = await this.getData("funny")
-    let love = await this.getData("love")
+    //let love = await this.getData("love")
     let art = await this.getData("art")
-    let students = await this.getData("students")
+    //let students = await this.getData("students")
     this.setState({
       loaded: true,
       data: [
